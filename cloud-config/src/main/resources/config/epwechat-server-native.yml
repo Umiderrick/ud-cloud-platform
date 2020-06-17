@@ -1,0 +1,27 @@
+server:
+  port: 8001
+spring:
+  datasource:
+    jdbcUrl: jdbc:mysql://dev01.drplt.com:3306/dp_wechat_t
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: dp_wechat_t_u
+    password: dp_wechat_t_p
+  main:
+     allow-bean-definition-overriding: true
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  data: 
+    redis: 
+      repositories: 
+        enabled: false
+  boot:
+    admin:
+      client:
+        url: http://localhost:8006
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

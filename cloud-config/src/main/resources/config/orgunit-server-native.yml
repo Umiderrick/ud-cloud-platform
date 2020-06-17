@@ -1,0 +1,54 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /org
+spring:
+  servlet:
+    multipart:
+      max-file-size: -1
+  boot:
+    admin:
+      client:
+        url: http://localhost:8006
+  data:
+    redis:
+      repositories:
+        enabled: false
+  redis:
+    host: localhost
+    port: 6379
+    database: 1
+  datasource:
+      jdbcUrl: jdbc:mysql://dev01.drplt.com:3306/zeus_org_auth
+      driverClassName: com.mysql.cj.jdbc.Driver
+      type: org.apache.commons.dbcp2.BasicDataSource
+      maxWaitMillis: 3330000
+      username: zeus_org_u
+      password: zeus_org_p
+      minIdle: 2
+      maxIdle: 10
+      maxTotal: 30
+      initialSize: 2
+      validationQuery: SELECT 1
+      initialization-mode: always
+jobs:
+  counter: 0 10 22 * * ?
+  customer: 0 0 22 * * ?
+  orgunit: 0 5 22 * * ?
+  ihrSyncTask: 0 20 22 * * ?
+  wechatPush: 0 30 23 * * ?
+MAX_LEVEL: 5
+EPWECHAT_GET_TOKEN: /entwx/token/getToken
+EPWECHAT_GET_DEPARTMENT_LIST: /entwx/department/get
+EPWECHAT_CREATE_DEPARTMENT: /entwx/department/create
+EPWECHAT_UPDATE_DEPARTMENT: /entwx/department/update
+EPWECHAT_DELETE_DEPARTMENT: /entwx/department/delete
+EPWECHAT_GET_EMPLOYEE_LIST: /entwx/user/departdetailinfo
+EPWECHAT_CREATE_EMPLOYEE: /entwx/user/create
+EPWECHAT_UPDATE_EMPLOYEE: /entwx/user/update
+EPWECHAT_DELETE_EMPLOYEE: /entwx/user/delete
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
