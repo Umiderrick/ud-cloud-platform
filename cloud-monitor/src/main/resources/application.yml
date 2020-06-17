@@ -1,0 +1,17 @@
+server:
+ port: 8006
+spring:
+ application:
+  name: admin-server
+ boot:
+  admin:
+   routes:
+    endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,hystrix.stream
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: http://localhost:6789/eureka/
+ 
+
+    
+    
