@@ -1,4 +1,4 @@
-package com.zuesas.cloud;
+package com.zeusas.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
