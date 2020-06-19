@@ -9,9 +9,9 @@ spring:
   main:
      allow-bean-definition-overriding: true
   redis:
-    host: localhost
+    host: dev01.drplt.com
     port: 6379
-    database: 0
+    database: 4
   data: 
     redis: 
       repositories: 

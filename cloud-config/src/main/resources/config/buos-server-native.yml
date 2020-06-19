@@ -1,0 +1,36 @@
+server:
+  max-http-post-size: 1073741824
+  port: 8004
+  servlet:
+   context-path: /dp-buos
+spring:
+  servlet:
+   multipart:
+      max-file-size: 1073741824
+      max-request-size: 1073741824
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQLDialect
+  redis:
+    host: dev01.drplt.com
+    port: 26379
+    database: 2
+  data:
+    redis:
+      repositories:
+        enabled: false
+  datasource: 
+    url: jdbc:mysql://dev01.drplt.com:3306/dp_baseinfo2?useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: dp_baseinfo_t_u
+    password: dp_baseinfo_t_p
+    driverClassName: com.mysql.cj.jdbc.Driver
+    type: org.apache.commons.dbcp2.BasicDataSource
+    maxWaitMillis: 3330000      
+    minIdle: 2
+    maxIdle: 5
+    maxTotal: 8
+    initialSize: 1
+    validationQuery: SELECT 1    
+    initialization-mode: always
+  main:
+    allow-bean-definition-overriding: true
