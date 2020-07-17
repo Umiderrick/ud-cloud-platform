@@ -11,7 +11,7 @@ spring:
     hibernate: 
       ddl-auto: update
   redis:
-    host: dev01.drplt.com
+    host: localhost
     port: 6379
     database: 2
   data:

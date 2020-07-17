@@ -1,0 +1,13 @@
+server:
+  port: 8007
+  servlet:
+    context-path: /question
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+  boot:
+    admin:
+      client:
+        url: http://localhost:8006

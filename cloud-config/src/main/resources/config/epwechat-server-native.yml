@@ -1,5 +1,7 @@
 server:
   port: 8001
+  servlet:
+   context-path: /entwx
 spring:
   datasource:
     jdbcUrl: jdbc:mysql://dev01.drplt.com:3306/dp_wechat_t
@@ -9,7 +11,7 @@ spring:
   main:
      allow-bean-definition-overriding: true
   redis:
-    host: dev01.drplt.com
+    host: localhost
     port: 6379
     database: 4
   data: 
